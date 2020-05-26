@@ -1,0 +1,10 @@
+Framework:
+    -Nodes (named pipes) are meeting points for data distribution
+        -Nodes have subscribers and publishers
+    -Master script sets up nodes and Framework
+
+Nodes:
+    -named pipes are nodes
+    -pipes are created by node manager thread
+    -list of nodes is put into file to be read by node manager thread
+    
