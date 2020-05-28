@@ -1,8 +1,9 @@
-#include "master.hpp"
+#include "node_setup.hpp"
 #include "exceptions.hpp"
 #include <iostream>
 
 int main(int argc,char **argv){
+
     try{
         if (argc < 2){
             throw NodeFilePathMissing();
