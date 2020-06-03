@@ -19,7 +19,7 @@ public:
 
 private:
     void readNodes();
-    void setupPSNetwork();
+    std::vector<Node> setupPSNetwork();
     //void makePipes(); May move to separate node class
 
 };
