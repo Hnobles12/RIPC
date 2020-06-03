@@ -7,7 +7,8 @@ Framework:
      when data is available.
 
 Nodes:
-    -named pipes are nodes
+    -Nodes are groups of named pipes linking subscibers to publishers and notifying subscibers
+     of data availability.
     -pipes are created by node manager thread
     -list of nodes is put into file to be read by node manager thread
     Nodes File:

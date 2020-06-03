@@ -1,13 +1,12 @@
 #include "node_setup.hpp"
 #include "node.hpp"
-//#include <iostream>
+
 #include <fstream>
 #include <vector>
 
 NodeSetup::NodeSetup(std::string wrkspc_dir){
     NodeSetup::workspace_path = wrkspc_dir;
 }
-
 void NodeSetup::readNodes(){
     std::ifstream file(workspace_path+"/nodes.rpcc");
     std::string name;
@@ -18,7 +17,7 @@ void NodeSetup::readNodes(){
     }
     NodeSetup::count = NodeSetup::names.size();
 }
-std::vector<Node> NodeSetup::setupPSNetwork(){
+void NodeSetup::setupPSNetwork(){
     std::vector<std::string> publishers, subscribers;
     for (int i=0; i < NodeSetup::count; i++){
         std::ifstream pub_file(NodeSetup::workspace_path+"/"+NodeSetup::names[i]+"_pub.rpcc");
@@ -33,7 +32,7 @@ std::vector<Node> NodeSetup::setupPSNetwork(){
             getline(sub_file, sub_data);
             subscribers.push_back(sub_data);
         }
-        Node node_obj();
+        Node node_obj(NodeSetup::names[i], publishers, subscribers, NodeSetup::workspace_path);
         NodeSetup::nodes.push_back(node_obj);
     }
 }
