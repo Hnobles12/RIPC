@@ -3,8 +3,13 @@
 
 #include <sys/types.h>
 #include <unistd.h>
+//#include <signal.h>
 
-int pid = getppid();
+int getPID(){
+    int pid = getpid();
+    return pid;
+}
 
+signal()
 
 #endif
