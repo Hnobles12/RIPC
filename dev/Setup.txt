@@ -9,6 +9,7 @@ Framework:
 Nodes:
     -Nodes are groups of named pipes linking subscibers to publishers and notifying subscibers
      of data availability.
+    -May use signals to notify processes of new data being published.
     -pipes are created by node manager thread
     -list of nodes is put into file to be read by node manager thread
     Nodes File:
@@ -16,8 +17,8 @@ Nodes:
         -For each node, includes publisher and subsciber names
 
 Workspace:
-    -for master call workspace must be defined
+    -for master call, workspace must be defined
     -path to workspace is passed to master program
-    -nodes.rpc (maybe .json) is read
+    -nodes.rpcc (maybe .json) is read
 
     
